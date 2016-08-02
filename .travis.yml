@@ -1,0 +1,17 @@
+language: cpp
+sudo: required
+dist: trusty
+compiler:
+  - clang
+  - gcc
+script:
+  - mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX:PATH=../install && make install ..
+addons:
+  apt:
+    sources:
+      - ubunut-toolchain-r-test
+      - kalakris-cmake
+    packages:
+      - g++4.8
+      - cmake
+      - git
